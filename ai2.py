@@ -1,10 +1,11 @@
 import re
+import os
 import sqlite3
 import pandas as pd
 from openai import OpenAI
 
 # 初始化 OpenAI 客戶端
-client = OpenAI(api_key='sk-proj-FZX1nK8ry4Aew48WN4pJT3BlbkFJRYCq6RwwhPaBplLliUse')
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 # 創建數據庫連接
 conn = sqlite3.connect('rental_database.db')
